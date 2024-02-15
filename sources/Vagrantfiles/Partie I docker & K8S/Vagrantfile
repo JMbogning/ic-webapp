@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
     minikube.vm.hostname = "minikube"
     minikube.vm.provider "virtualbox" do |v|
       v.name = "minikube"
-      v.memory = 10240
-      v.cpus = 6
+      v.memory = 4096
+      v.cpus = 4
     end
     minikube.vm.provision :shell do |shell|
       shell.path = "install_minikube.sh"
