@@ -1,11 +1,10 @@
-FROM python:3.6-alpine
+FROM python:3.11-alpine
 LABEL maintener = "Junior Mbogning"
 WORKDIR /opt
 RUN pip install flask
-ADD . /opt/
-VOLUME /opt/
+ADD . /opt
+VOLUME /opt
 EXPOSE 8080
 ENV ODOO_URL="https://www.odoo.com"
 ENV PGADMIN_URL="https://www.pgadmin.org"
-ENTRYPOINT [ "python" ]
-CMD [ "app.py" ]
+ENTRYPOINT [ "python", "app.py" ]
