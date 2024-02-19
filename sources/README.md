@@ -57,11 +57,30 @@ Ci-dessous un aperçu du site vitrine attendu.
 ```
 Ce Dockerfile définit une image de base légère (Alpine), installe les dépendances nécessaires, expose le port de l'application, définit des variables d'environnement pour une configuration flexible et configure le conteneur pour lancer votre application au démarrage.
 
-## **b. Commencez par créer un fichier nommé Dockerfile sans extension.**
+## **b. Création d'une image Docker nommée `ic-webapp` avec le tag 1.0.**
 Exécutez la commande suivante dans le terminal, à l'emplacement du Dockerfile, pour construire l'image Docker de l'application :
 ```bash
    # Utilisation de l'image de base Python 3.11 Alpine pour sa légèreté
    docker build -f Dockerfile -t mbogning/ic-group:v1.0 .
 ```
 ![](images/build-image.png)
+
+## **c. Lancement d'un container test**
+Après avoir construit l'image, lancez un conteneur de test en utilisant :
+```bash
+   # Utilisation de l'image de base Python 3.11 Alpine pour sa légèreté
+   docker run -d --name test-ic-webapp -p 7000:8080 mbogning/ic-webapp:v1.0
+```
+![](images/run-container.png)
+
+## **d. Vérification de l'adresse IP de l'hote**
+```bash
+   # 
+    ip -a
+```
+![](images/verify-ip-adress.png)
+
+## **e. Page d'accueil IC-WEBAPP**
+
+![](images/ic-webapp-homepage.png)
 
