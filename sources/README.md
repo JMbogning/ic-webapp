@@ -55,4 +55,13 @@ Ci-dessous un aperçu du site vitrine attendu.
    # Définition du point d'entrée, lance l'application
    ENTRYPOINT ["python", "app.py"]
 ```
+Ce Dockerfile définit une image de base légère (Alpine), installe les dépendances nécessaires, expose le port de l'application, définit des variables d'environnement pour une configuration flexible et configure le conteneur pour lancer votre application au démarrage.
+
+## **b. Commencez par créer un fichier nommé Dockerfile sans extension.**
+Exécutez la commande suivante dans le terminal, à l'emplacement du Dockerfile, pour construire l'image Docker de l'application :
+```bash
+   # Utilisation de l'image de base Python 3.11 Alpine pour sa légèreté
+   docker build -f Dockerfile -t mbogning/ic-group:v1.0 .
+```
+![](images/build-image.png)
 
