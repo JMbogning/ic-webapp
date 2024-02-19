@@ -33,24 +33,24 @@ Ci-dessous un aperçu du site vitrine attendu.
 
 ### **2) Conteneurisation de l’application web.** 
 
-## **a. Commencez par créer un fichier nommé Dockerfile sans extension. Voici le contenu :
+## **a. Commencez par créer un fichier nommé Dockerfile sans extension.**
 
 ```bash
-   # Utilisation de l'image de base Python 3.6 Alpine pour sa légèreté
-   FROM python:3.6-alpine
+   # Utilisation de l'image de base Python 3.11 Alpine pour sa légèreté
+   FROM python:3.11-alpine
    
    # Définition du répertoire de travail dans le conteneur
    WORKDIR /opt
    
-   # Installation de Flask version 1.1.2
-   RUN pip install flask==1.1.2
+   # Installation de Flask
+   RUN pip install flask
    
    # Exposition du port 8080, utilisé par défaut par l'application
    EXPOSE 8080
    
    # Création de variables d'environnement pour configuration externe
-   ENV ODOO_URL= \
-       PGADMIN_URL=
+   ENV ODOO_URL=https://www.odoo.com
+   ENV PGADMIN_URL=https://www.pgadmin.org
    
    # Définition du point d'entrée, lance l'application
    ENTRYPOINT ["python", "app.py"]
