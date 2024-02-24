@@ -75,3 +75,7 @@ Après avoir construit l'image, lancez un conteneur de test en utilisant :
 
 ![](images/ic-webapp-homepage.png)
 
+### **3) Déploiement des applications dans un cluster Kubernetes.** 
+## **a. Module ic-webapp.**
+## **i. Mise en place du Namespace.**
+
