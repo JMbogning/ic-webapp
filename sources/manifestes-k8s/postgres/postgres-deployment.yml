@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
+  namespace: ic-webapp
   labels:
     app: postgres
     env: prod
-  namespace: ic-webapp
 spec:
   replicas: 1
   selector:
@@ -23,10 +23,10 @@ spec:
         - name: POSTGRES_DB
           value: postgres
         - name: POSTGRES_USER
-        - value: junior
+          value: junior
         - name: POSTGRES_PASSWORD
           valueFrom: 
-            secretkeyRef:
+            secretKeyRef:  
               name: postgres
               key: POSTGRES_PASSWORD
         ports:
@@ -37,6 +37,7 @@ spec:
           mountPath: /var/lib/postgresql/data
       volumes:
       - name: pg-data
-        hostpath:
-          path: /data_k8s/postgres 
+        hostPath:  
+          path: /data_k8s/postgres
+
 

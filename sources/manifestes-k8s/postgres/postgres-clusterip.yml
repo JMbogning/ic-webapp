@@ -2,17 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   name: postgres
+  namespace: ic-webapp
   labels:
     app: postgres
     env: prod
-  name: postgres
-  namespace: ic-webapp
 spec:
-  containers:
-    ports:
+  ports:
     - port: 5432
-      protocol: TCP
       targetPort: 5432
-    selector: 
-      app: postgres
-    type: ClusterIP
+      protocol: TCP
+  selector: 
+    app: postgres
+  type: ClusterIP
+
